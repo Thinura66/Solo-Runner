@@ -1,0 +1,61 @@
+// Import Firebase modules
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
+import { getStorage, ref, listAll, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-storage.js";
+
+// Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyDPwA_y2ZVycvIoek0bmrobve6BT1G-FZ0",
+    authDomain: "l1project-681ca.firebaseapp.com",
+    databaseURL: "https://l1project-681ca-default-rtdb.firebaseio.com",
+    projectId: "l1project-681ca",
+    storageBucket: "l1project-681ca.appspot.com",
+    messagingSenderId: "43200809626",
+    appId: "1:43200809626:web:65dc0ffabaf58a868eed23"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
+
+function fetchImages(folderName) {
+    const imagesContainer = document.getElementById('image-container');
+    if (!imagesContainer) {
+        console.error('Image container not found.');
+        return;
+    }
+
+    const listRef = ref(storage, folderName);
+
+    listAll(listRef).then((result) => {
+        let skipFirst = true; // Flag to skip the first image
+        result.items.forEach((imageRef) => {
+            if (skipFirst) {
+                skipFirst = false;
+                return; // Skip the first image
+            }
+
+            getDownloadURL(imageRef).then((url) => {
+                const imgElement = document.createElement('img');
+                imgElement.src = url;
+                imgElement.alt = 'Image';
+                imgElement.style.width = '600px'; // Adjust size as needed
+                imgElement.style.margin = '20px'; // Adjust spacing as needed
+                imagesContainer.appendChild(imgElement);
+            }).catch((error) => {
+                console.error('Error getting download URL:', error);
+            });
+        });
+    }).catch((error) => {
+        console.error('Error listing images:', error);
+    });
+}
+
+// Ensure script runs after DOM has loaded
+window.addEventListener('load', () => {
+    const folderName = new URLSearchParams(window.location.search).get('id');
+    if (folderName) {
+        fetchImages(folderName);
+    } else {
+        console.error('Folder name not provided.');
+    }
+});

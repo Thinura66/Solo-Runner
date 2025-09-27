@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+
+    <style>
+
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: justify;
+            margin: auto;
+            padding: 1px;
+            background: #ffffff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            z-index: 1000;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding-right: 30px;
+        }
+
+        .qe{
+            width: 300px;
+            height: 50px;
+            padding-left: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        #navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        #navbar li .n:hover {
+            color: rgba(47, 19, 67, 0.931);;
+        }
+
+        #navbar li {
+            list-style: none;
+            padding: 0 25px;
+        }
+
+        #navbar li .n{
+            text-decoration: none;
+            font-family: "Rubik", sans-serif;
+            font-size: 18px;
+            font-weight: 200;
+            color: #0a0a0a;
+            transition: 0.3s ease;
+        }
+
+        #navbar li .n:hover{
+            text-decoration: solid underline rgb(162, 167, 154) 2px;
+            font-family: "Rubik", sans-serif;
+            transition: 0.9s ease;
+            color: rgba(47, 19, 67, 0.931);;
+        }
+
+        .box1 {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            backdrop-filter: blur(10px);
+            display: none;
+            flex-direction: column;
+        }
+
+        #navbar1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            justify-content: flex-start;
+            
+        }
+
+        #navbar1 a:hover {
+            background-color: #f0f0f0;
+        } 
+
+        #navbar1 li {
+            list-style: none;
+            position: relative;
+            padding: 20px 25px;
+            width: 100%;
+        }
+
+        #navbar1 li .n{
+            text-decoration: none;
+            font-family: "Rubik", sans-serif;
+            font-size: 18px;
+            font-weight: 200;
+            color: #0a0a0a;
+            transition: 0.3s ease;
+        }
+
+        .menu_b{
+            display: none;
+        }
+
+        @media(max-width: 800px){
+            .hideOnMobile{
+                display: none;
+            }
+            .menu_b{
+                display: block;
+                margin-right: auto;
+            }
+            .box .box_3 ,.e{
+            
+                padding: 0 10px;
+            }
+            
+            #e3{
+                padding-right: 60px;
+            }
+
+            .box1 {
+                width: 80%;
+            }
+
+        }
+
+        @media(max-width: 400px){
+            .box1{
+            width: 100%;
+            }
+            .qe{
+                width: 70%; 
+                height: 50%; 
+                max-width: 300px;
+            }
+        }
+
+        .box1 {
+            display: none; /* Initially hide the sidebar */
+            overflow: hidden; /* Hide any content that overflows the sidebar */
+            max-height: 0; /* Start with zero height */
+            transition: max-height 1s ease; /* Transition max-height property over 1 second with ease */
+            /* Additional styling for your sidebar */
+        }
+
+
+
+
+
+        .main{
+            width: 80%;
+            align-items: center;
+            height: auto;
+            margin: 0 auto;
+            padding-top: 30px;
+            padding-bottom: 50px;
+
+        }
+
+        @media (max-width: 800px){
+            .main{
+                width: 80%;
+                align-items: center;
+                height: auto;
+                margin: 0 auto;
+            }
+            .contactus{
+                flex-direction: column;
+                align-items: center;
+            }
+            .contacttopis{
+                display: none;
+            }
+        }
+
+        .abtopic{
+            text-align: center;
+            font-size: 40px;
+            font-family: sans-serif;
+            color: #222222;
+        }
+
+        .aboutustext{
+            padding: 10px;
+            font-size: 20px;
+            color: rgb(43, 43, 43);
+            font-family: sans-serif;
+        }
+
+        .contactus{
+            width: 70%;
+            display: flex;
+            flex-direction: row;
+            font-family: sans-serif;
+            padding-top: 30px;
+            align-items: center;
+            padding-left: 0;
+            gap: 5%;
+            color: #222222;
+        }
+
+        .contacticon{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 18%;
+            padding-left: 8%;
+        }
+
+        .email img{
+            width: 40px;
+            height: 40px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <section class="header">
+        <div class="box">
+            <a href="final.html"><img class="qe" src="run0001.png" width="300" height="60"></a>
+        </div>
+
+    
+        <div class="box hideOnMobile">
+            <ul id="navbar">
+                <li><a class="n" href="final.html">Dashboard</a></li>
+                <li><a class="n" href="prograss.html">Progress</a></li>
+                <li><a class="n" href="about.html">About Us</a></li>
+            </ul>
+        </div>    
+    </section>
+
+
+
+
+    <div class="main">
+        
+        <h1 class="abtopic">About Us</h1>
+        <p class="aboutustext">
+            " Welcome to SoloRunner! We are a team of passionate and innovative individuals from the University of Moratuwa's
+             Faculty of Information Technology. Our goal is to revolutionize the way athletes train on running tracks by providing state-of-the-art timing systems. 
+             With our cutting-edge technology, we aim to empower athletes to train autonomously, track their progress, and optimize their performance effectively. <br><br>
+             By ensuring accurate timing, immediate feedback, and comprehensive data analysis, we are dedicated to enhancing the training experiences of 
+             runners of all levels. Join us on our journey to make running training more accessible, efficient, and enjoyable for everyone! "
+        </p>
+
+
+        <div class="contactus">
+            <h2 class="contacttopis">Contact Us :</h2>
+            
+            <div class="contacticon">
+                <div class="email">
+                    <a href="https://mail.google.com/"><img src="icons8-gmail-50.png" alt="emailocon"></a>
+                </div>
+                <div class="email">
+                    <a href="https://github.com/JayaweeraWGHMPSC"><img src="icons8-github-50.png" alt="whatsappicon"></a>
+                </div>
+                <div class="email">
+                    <a href="https://chat.whatsapp.com/HyrrSOV8wo23HNUwwbjMJh"><img src="icons8-whatsapp-50.png" alt="githuicon"></a>
+                </div>
+                <div class="email">
+                    <a href="https://www.facebook.com/"><img src="icons8-facebook-50.png" alt="facebook"></a>
+                </div>
+                <div class="email">
+                    <a href="https://www.linkedin.com/"><img src="icons8-linkedin-50.png" alt="githuicon"></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

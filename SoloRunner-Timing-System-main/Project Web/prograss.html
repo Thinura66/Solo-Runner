@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progress</title>
+    <style>
+        body {
+            min-height: 100vh;
+            margin-bottom: 60px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: justify;
+            margin: auto;
+            padding: 1px;
+            background: #ffffff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            z-index: 1000;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding-right: 30px;
+        }
+        .qe {
+            width: 300px;
+            height: 50px;
+            padding-left: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        #navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        #navbar li {
+            list-style: none;
+            padding: 0 25px;
+        }
+        #navbar li .n {
+            text-decoration: none;
+            font-family: "Rubik", sans-serif;
+            font-size: 18px;
+            font-weight: 200;
+            color: #0a0a0a;
+            transition: 0.3s ease;
+        }
+        #navbar li .n:hover {
+            text-decoration: underline solid rgb(162, 167, 154) 2px;
+            color: rgba(47, 19, 67, 0.931);
+        }
+        canvas {
+            width: 100%;
+            height: 400px;
+        }
+        .secondtopic {
+            color: rgb(37, 35, 35);
+            text-align: center;
+            font-size: 25px;
+            font-family: sans-serif;
+            margin-top: 50px;
+            font-weight: 300;
+        }
+        @media(max-width: 430px){
+            
+            
+            .box img{
+                height: 15px;
+                width: 55px;
+            }
+            .head{
+                margin-top: -20px;
+                width: 100%;
+                
+                
+            } 
+            .head .secondtopic{
+                font-size: 15px;
+            }
+            .container{
+                max-width: 430px;
+              
+            }
+            table {
+            margin: 0 auto;
+            padding-top: 30px;
+            border-collapse: collapse;
+            border-width: 0;
+            width: 95%;
+            font-size: 4px;
+            text-align: center;
+            font-family: sans-serif;
+            padding-bottom: 20px;
+            box-shadow: 4PX rgba(0, 0, 0, 0.3);
+        }
+
+        th{
+            color: white;
+            background-color: #183BD5;
+            
+            padding: 7px   ;
+        }
+
+        td{
+            color: black;
+            background-color: rgb(222, 222, 222);
+            height: auto;
+            font-size: 4px;
+            font-family: sans-serif;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        th,td{
+            border: 1px solid rgb(255, 255, 255); 
+            border-radius: 7px;
+            padding: 3px;
+        }
+        
+        .secondtopic{
+            text-align: center;
+            color: rgb(37, 35, 35);
+            font-size: 15px;
+            font-family: sans-serif;
+            margin-top: 25px;
+            padding-bottom: 20px;
+            font-weight: 300;
+        }
+       
+        .qe{
+            width: 300px;
+            height: 50px;
+            padding-left: 25px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            
+        }
+        #navbar li {
+            list-style: none;
+            padding: 0 5px;
+        }
+
+        #navbar li .n{
+            text-decoration: none;
+            font-family: "Rubik", sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            color: #000000;
+            transition: 0.3s ease;
+        }
+        .custom-button {
+        width: 48px;
+        height: 20px;
+        border-radius: 30px;
+        
+      }
+        .custom-button a {
+        font-size: 5px;
+      }
+        }
+    </style>
+    <script type="module" src="progress.js" defer></script>
+</head>
+<body>
+    <section class="header">
+        <div class="box">
+            <a href="final.html"><img class="qe" src="run0001.png" width="300" height="60"></a>
+        </div>
+        <div class="box hideOnMobile">
+            <ul id="navbar">
+                <li><a class="n" href="final.html">Dashboard</a></li>
+                <li><a class="n" href="prograss.html">Progress</a></li>
+                
+            </ul>
+        </div>
+    </section>
+    <div class="secondtopic"><b>Your Progress Report as a Runner ......</b></div>
+    <div class="mychart">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <!-- Include Chart.js from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Include your custom JavaScript -->
+</body>
+</html>

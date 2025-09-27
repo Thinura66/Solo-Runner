@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <Style>
+        body {
+            min-height: 100vh;
+            margin-bottom: 60px;
+        }
+        .header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: justify;
+            margin: auto;
+            padding: 1px;
+            background: #ffffff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            z-index: 1000;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding-right: 30px;
+        }
+
+        .qe{
+            width: 300px;
+            height: 50px;
+            padding-left: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+           
+        }
+
+        #navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        #navbar li .n:hover {
+            color: rgba(47, 19, 67, 0.931);;
+        }
+
+        #navbar li {
+            list-style: none;
+            padding: 0 25px;
+        }
+
+        #navbar li .n{
+            text-decoration: none;
+            font-family: "Rubik", sans-serif;
+            font-size: 18px;
+            font-weight: 200;
+            color: #0a0a0a;
+            transition: 0.3s ease;
+        }
+
+        #navbar li .n:hover{
+            text-decoration: solid underline rgb(162, 167, 154) 2px;
+            font-family: "Rubik", sans-serif;
+            transition: 0.9s ease;
+            color: rgba(47, 19, 67, 0.931);;
+        }
+
+        
+
+        
+
+        .menu_b{
+            display: none;
+        }
+
+        @media(max-width: 800px){
+            .hideOnMobile{
+                display: none;
+            }
+            .menu_b{
+                display: block;
+                margin-right: auto;
+            }
+            .box .box_3 ,.e{
+            
+                padding: 0 10px;
+            }
+            
+            #e3{
+                padding-right: 60px;
+            }
+
+            
+
+        }
+
+        .custom-button{
+        color:white; border: none; background-color: blue; width: 80px; height: 30px; border-radius: 17px;
+        }
+
+
+
+
+
+
+        .secondtopic{
+            text-align: center;
+            color: rgb(37, 35, 35);
+            font-size: 25px;
+            font-family: sans-serif;
+            margin-top: 40px;
+            padding-bottom: 30px;
+            font-weight: 300;
+        }
+
+        @media (max-width: 900px){
+            table{
+                width: 70%;
+                height: auto;
+                margin: 20;
+                
+            }
+        }
+
+        table {
+            margin: 0 auto;
+            padding-top: 100px;
+            border-collapse: collapse;
+            border-width: 10px;
+            width: 85%;
+            font-size: 18px;
+            text-align: center;
+            font-family: sans-serif;
+            padding-bottom: 50px;
+            box-shadow: 4PX rgba(0, 0, 0, 0.3);
+        }
+
+        th{
+            color: white;
+            background-color: #183BD5;
+            height: auto;
+            padding: 10px;
+        }
+
+        td{
+            color: black;
+            background-color: rgb(222, 222, 222);
+            height: auto;
+            font-size: 18px;
+            font-family: sans-serif;
+            font-weight: 120;
+            text-align: center;
+        }
+
+        th,td{
+            border: 4px solid rgb(255, 255, 255); 
+            border-radius: 10px;
+            padding: 10px;
+        }
+
+        .camrecords{
+            color: black;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        
+        .box a{
+            text-decoration: none;
+        }
+        @media(max-width: 430px){
+            
+            
+            .box img{
+                height: 15px;
+                width: 55px;
+            }
+            .head{
+                margin-top: -20px;
+                width: 100%;
+                
+                
+            } 
+            .head .secondtopic{
+                font-size: 15px;
+            }
+            .container{
+                max-width: 430px;
+              
+            }
+            table {
+            margin: 0 auto;
+            padding-top: 30px;
+            border-collapse: collapse;
+            border-width: 0;
+            width: 95%;
+            font-size: 6px;
+            text-align: center;
+            font-family: sans-serif;
+            padding-bottom: 20px;
+            box-shadow: 4PX rgba(0, 0, 0, 0.3);
+        }
+
+        th{
+            color: white;
+            background-color: #183BD5;
+            
+            padding: 7px   ;
+        }
+
+        td{
+            color: black;
+            background-color: rgb(222, 222, 222);
+            height: auto;
+            font-size: 6px;
+            font-family: sans-serif;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        th,td{
+            border: 1px solid rgb(255, 255, 255); 
+            border-radius: 7px;
+            padding: 4px;
+        }
+        
+        .secondtopic{
+            text-align: center;
+            color: rgb(37, 35, 35);
+            font-size: 25px;
+            font-family: sans-serif;
+            margin-top: 25px;
+            padding-bottom: 20px;
+            font-weight: 300;
+        }
+       
+        .qe{
+            width: 300px;
+            height: 50px;
+            padding-left: 25px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            
+        }
+        #navbar li {
+            list-style: none;
+            padding: 0 5px;
+        }
+
+        #navbar li .n{
+            text-decoration: none;
+            font-family: "Rubik", sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            color: #000000;
+            transition: 0.3s ease;
+        }
+        .custom-button {
+        width: 48px;
+        height: 20px;
+        border-radius: 30px;
+        
+      }
+        .custom-button a {
+        font-size: 5px;
+      }
+        }
+
+    </Style>
+
+    <script type="module" src="final.js" defer></script>
+</head>
+<body>
+    
+    <section class="header">
+        <div class="box">
+            <a href="final.html">
+                <img class="qe" src="run0001.png" >
+                
+            </a>
+        </div>
+
+    
+        <div class="box ">
+            <ul id="navbar">
+
+                <li><a class="n" href="final.html">Dashboard</a></li>
+                <li><a class="n" href="prograss.html">Progress</a></li>
+                
+            </ul>
+        </div>    
+    </section>
+
+    <div class="container">
+        <main>
+            <div class="head">
+                <br>
+                <div class="secondtopic"><b>Daily Training Overview ......  </b></div>
+            </div>
+            <div class="details"> 
+                <table class="table">
+                    <thead>
+                        <th>Date</th>
+                        <th>Start Time</th>
+                        <th>Leg Release Time</th>
+                        <th>End Time</th>
+                        <th>Timing</th>
+                        <th>Block Position</th>
+                    </thead>
+                    <tbody id="tbody1"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <div id="a1"></div>
+
+    <script>
+        function logout(){
+            alert('Good Bye');
+        }
+
+        import {username} from 'C:/Users/pathu/Desktop/Project/web/login.js'
+        alert(username) ;
+        document.getElementById('a1').innerHTML = '<button class="custom-button"><center><a href="#">Click Here</a></center></button>';
+    
+    </script>
+
+
+
+        
+</body>
+
+</html>

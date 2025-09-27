@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Display</title>
+    <script type="module" src="firebaseImageFetcher.js"></script>
+    <style>
+        body {
+            height: 1000px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: justify;
+            margin: auto;
+            padding: 1px;
+            background: #ffffff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+            z-index: 1000;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding-right: 30px;
+        }
+
+        .qe {
+            width: 300px;
+            height: 50px;
+            padding-left: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        .secondtopic {
+            text-align: center;
+            color: rgb(37, 35, 35);
+            font-size: 25px;
+            font-family: sans-serif;
+            margin-top: 40px;
+            padding-bottom: 30px;
+            font-weight: 300;
+        }
+        .slideshowimage {
+            cursor: grab;
+            width: 40%;
+            border-radius: 10px;
+            transition: transform 0.25s ease;
+            z-index: -1;
+            position: absolute;
+            top: 300px;
+        }
+
+        #navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        #navbar li .n:hover {
+            color: rgba(47, 19, 67, 0.931);
+        }
+
+        #navbar li {
+            list-style: none;
+            padding: 0 25px;
+        }
+
+        #navbar li .n {
+            text-decoration: none;
+            font-family: "Rubik", sans-serif;
+            font-size: 18px;
+            font-weight: 200;
+            color: #0a0a0a;
+            transition: 0.3s ease;
+        }
+
+        #navbar li .n:hover {
+            text-decoration: solid underline rgb(162, 167, 154) 2px;
+            font-family: "Rubik", sans-serif;
+            transition: 0.9s ease;
+            color: rgba(47, 19, 67, 0.931);
+        }
+
+        .box1 {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 100vh;
+            width: 250px;
+            z-index: 999;
+            box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+            backdrop-filter: blur(10px);
+            display: none;
+            flex-direction: column;
+        }
+
+        #navbar1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        #navbar1 a:hover {
+            background-color: #f0f0f0;
+        }
+
+        #navbar1 li {
+            list-style: none;
+            position: relative;
+            padding: 20px 25px;
+            width: 100%;
+        }
+
+        #navbar1 li .n {
+            text-decoration: none;
+            font-family: "Rubik", sans-serif;
+            font-size: 18px;
+            font-weight: 200;
+            color: #0a0a0a;
+            transition: 0.3s ease;
+        }
+
+        .menu_b {
+            display: none;
+        }
+
+        @media(max-width: 800px) {
+            .hideOnMobile {
+                display: none;
+            }
+            .menu_b {
+                display: block;
+                margin-right: auto;
+            }
+            .box .box_3, .e {
+                padding: 0 10px;
+            }
+            #e3 {
+                padding-right: 60px;
+            }
+            .box1 {
+                width: 80%;
+            }
+        }
+
+        @media(max-width: 430px){
+            
+            
+            .box img{
+                height: 15px;
+                width: 55px;
+            }
+            .head{
+                margin-top: -20px;
+                width: 100%;
+                
+                
+            } 
+           
+            .container{
+                max-width: 430px;
+              
+            }
+            table {
+            margin: 0 auto;
+            padding-top: 30px;
+            border-collapse: collapse;
+            border-width: 0;
+            width: 95%;
+            font-size: 6px;
+            text-align: center;
+            font-family: sans-serif;
+            padding-bottom: 20px;
+            box-shadow: 4PX rgba(0, 0, 0, 0.3);
+        }
+
+        th{
+            color: white;
+            background-color: #183BD5;
+            
+            padding: 7px   ;
+        }
+
+        td{
+            color: black;
+            background-color: rgb(222, 222, 222);
+            height: auto;
+            font-size: 6px;
+            font-family: sans-serif;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        th,td{
+            border: 1px solid rgb(255, 255, 255); 
+            border-radius: 7px;
+            padding: 4px;
+        }
+        
+        .secondtopic{
+            text-align: center;
+            color: rgb(37, 35, 35);
+            font-size: 15px;
+            font-family: sans-serif;
+            margin-top: 15px;
+            padding-bottom: 20px;
+            font-weight: 300;
+        }
+       
+        .qe{
+            width: 300px;
+            height: 50px;
+            padding-left: 25px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            
+        }
+        #navbar li {
+            list-style: none;
+            padding: 0 5px;
+        }
+
+        #navbar li .n{
+            text-decoration: none;
+            font-family: "Rubik", sans-serif;
+            font-size: 10px;
+            font-weight: 400;
+            color: #000000;
+            transition: 0.3s ease;
+        }
+        .custom-button {
+        width: 48px;
+        height: 20px;
+        border-radius: 30px;
+        
+      }
+        .custom-button a {
+        font-size: 5px;
+      }
+      .imageSlideshow button {
+            width: 50px;
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: #0a0a0a;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+        }
+        .imageSlideshow button img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .slideshowimage {
+            cursor: grab;
+            width: 80%;
+            border-radius: 10px;
+            transition: transform 0.25s ease;
+            z-index: -1;
+            position: absolute;
+            top: 200px;
+        }
+      
+        }
+
+        .box1 {
+            display: none; /* Initially hide the sidebar */
+            overflow: hidden; /* Hide any content that overflows the sidebar */
+            max-height: 0; /* Start with zero height */
+            transition: max-height 1s ease; /* Transition max-height property over 1 second with ease */
+            /* Additional styling for your sidebar */
+        }
+
+        
+        .imageContainer {
+            width: 100%;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .imageSlideshow {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .slideshowimage:active {
+            cursor: grabbing;
+        }
+        .slidebtn1{
+            border-radius: 10px 0 0 10px;
+        }
+        .slidebtn2 {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .imageSlideshow button {
+            width: 50px;
+            display: inline-block;
+            background-color: #f0f0f0;
+            color: #0a0a0a;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+        }
+        .imageSlideshow button img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        
+        
+    </style>
+</head>
+<body>
+    <section class="header">
+        <div class="box">
+            <a href="final.html">
+                <img class="qe" src="run0001.png">
+            </a>
+        </div>
+        <div class="box ">
+            <ul id="navbar">
+                <li><a class="n" href="final.html">Dashboard</a></li>
+                <li><a class="n" href="prograss.html">Progress</a></li>
+                
+            </ul>
+        </div>
+    </section>
+    <h1 class="secondtopic"><b>Starting Block Position ......</b></h1>
+    <div id="image-container" class="imageContainer">
+        <div class="imageSlideshow">
+            <button id="prevBtn"class="slidebtn1">
+                <img src="icons/left.png" class="icon">
+            </button>
+            <button id="zoomInBtn" class="zoomButton">
+                <img src="icons/zoom in.png">
+            </button>
+            <button id="zoomOutBtn" class="zoomButton">
+                <img src="icons/zoom out.png">
+            </button>
+            <button id="nextBtn" class="slidebtn2">
+                <img src="icons/right.png" class="icon">
+            </button>
+        </div>
+        <img src="" alt="image" id="imagel" class="slideshowimage">
+    </div>
+    <script>
+        const draggableImage = document.getElementById('imagel');
+        const zoomOutBtn = document.getElementById('zoomOutBtn');
+
+        let isDragging = false;
+        let startX, startY, initialX, initialY;
+        let translateX = 0, translateY = 0;
+
+        draggableImage.addEventListener('mousedown', (e) => {
+            e.preventDefault();
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            initialX = translateX;
+            initialY = translateY;
+            document.body.style.cursor = 'grabbing';
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+                translateX = initialX + dx;
+                translateY = initialY + dy;
+                draggableImage.style.transform = `translate(${translateX}px, ${translateY}px)`;
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+            document.body.style.cursor = 'default';
+        });
+
+        zoomOutBtn.addEventListener('click', () => {
+            // Reset the image position when zooming out
+            translateX = 0;
+            translateY = 0;
+            draggableImage.style.transform = `translate(${translateX}px, ${translateY}px)`;
+        });
+    </script>
+</body>
+</html>
